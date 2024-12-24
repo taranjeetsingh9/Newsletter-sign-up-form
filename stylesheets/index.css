@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(../assets/fonts/Roboto-Bold.ttf) format('truetype');
+    font-weight: bold;
+  font-style: normal;
+
+}
+@font-face{
+font-family: 'Roboto-Regular';
+src: url(../assets/fonts/Roboto-Regular.ttf) format('truetype');
+font-weight: normal;
+  font-style: normal;
+
+}
+
+:root{
+
+/* colors */
+
+--color-primary: hsl(4,100%,67%);
+--color-slate-dark: hsl(234,29%,20%);
+--color-charcoal-light: hsl(235,18%,26%);
+--color-grey: hsl(231,7%,65%);
+--color-white: hsl(0,0%,100%);
+
+/* Typography */
+
+--font-primary: 'Roboto-Regular', sans-serif;
+--font-heading: 'Roboto-Bold', sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
