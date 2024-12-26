@@ -14,33 +14,54 @@
 
   <!-----------------------
     Name: Taranjeet Singh
-    Date: 23-Dec-2024
+    Date: 25-Dec-2024
     ----------------------->
 
   <!-- Sign-up form start -->
+  <main class="mainDiv">
+    <div class="content">
+      <!--Product info -->
+      <header>
+        <h1>Stay updated!</h1>
+<br>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+</header>
 
-  Stay updated!
+<!--Subscription benefits -->
+<br>
+   <ul>
+    <li> <img src="./images/icon-list.svg" alt="icon list"> Product discovery and building matters </li>
+    <li> <img src="./images/icon-list.svg" alt="icon list"> Measuring to ensure updates are a success</li>
+    <li> <img src="./images/icon-list.svg" alt="icon list"> And much more! </li>
 
-  Join 60,000+ product managers receiving monthly updates on:
+  </ul>
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+  <br>
 
-  Email address
-  email@company.com
+<!--Email Form-->
+      <form novalidate id="form">
+        <div class="name-container">
+          <label for="email">Email address</label>   <span  aria-live="polite" class="error-email">Valid email required </span> 
+        </div>
+      
+      <input type="email" id="email" name="email" placeholder="email@company.com" required>
+    <br>
+      <button type="submit" class="subscribe-btn">Subscribe to monthly newsletter</button>
+      </form>
+    </div>
+    <div class="product-image">
+      <img src="./images/illustration-sign-up-desktop.svg" alt="Desktop Sign up image">
+   
+    </div>
+  </main>
+<!-- Sign-up form end -->
 
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
+<!-- Success message start -->
+<div class="success" style="display: none;">
+  <img src="./images/icon-list.svg" alt="success mark image">
+  <h1>Thanks for subscribing!</h1>
+<p>A confirmation email has been sent to {email}. Please open it and click the button inside to confirm your subscription.</p>
+<button class="dismiss-btn">Dismiss message</button>
+</div>
 </body>
 </html>
