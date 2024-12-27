@@ -46,7 +46,7 @@ body {
 }
 
 .mainDiv{
-  max-width: 50%;
+  max-width: 60%;
   max-height: 750px;
   position: absolute;
   top: 0;
@@ -59,7 +59,6 @@ body {
   justify-content: space-between;
   padding: var(--padding-r-primary);
   border-radius: var(--border-r-primary);
-
 }
 
 .content {
@@ -112,7 +111,7 @@ label {
   font-family: var(--font-heading);
 }
 
-input,.subscribe-btn {
+input,.subscribe-btn, .dismiss-btn {
   padding: 20px;
   font-size: 18px;
   border-radius: var(--border-r-secondary);
@@ -129,7 +128,7 @@ input:focus, input:hover{
   cursor: pointer;
 }
 
-.subscribe-btn{
+.subscribe-btn, .dismiss-btn{
   background-color: var(--color-slate-dark);
   color: var(--color-white);
   border: none;
@@ -139,7 +138,7 @@ input:focus, input:hover{
   transition-delay: 0.1s;
 }
 
-.subscribe-btn:hover{
+.subscribe-btn:hover, .dismiss-btn:hover{
   background-color: var(--color-primary);
 }
 
@@ -155,3 +154,56 @@ input:focus, input:hover{
   align-items: center;
 }
 
+.error-email{
+  color: var(--color-primary);
+  font-size: 14px;
+  font-family: var(--font-heading);
+  display: none;
+
+}
+.email-input{
+color: var(--color-primary);
+background-color: hsla(4, 100%, 67%, 0.136);
+border: 2px solid var(--color-primary);
+}
+
+
+.success {
+  display:none;
+  width: 25%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-height: 430px;
+  background-color: var(--color-white);
+  border-radius: var(--border-r-primary);
+  padding: 40px;
+}
+.success img {
+  width: 50px;
+  height: 60px;
+}
+.success h1 {
+  font-size: 45px;
+line-height: 50px;
+color: var(--color-slate-dark);
+
+}
+
+.success p{
+  font-size: 13px;
+  color: var(--color-charcoal-light);
+  line-height: 20px;
+
+
+}
+.success span {
+  font-family: var(--font-heading);
+}
+.dismiss-btn {
+  margin-top: 30px;
+}
+/* img, h1, p, button */
