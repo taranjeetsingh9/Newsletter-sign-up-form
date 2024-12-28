@@ -1,4 +1,10 @@
+/*-----------------------------
+   Author: Taranjeet Singh 
+   Date  : 27 Dec 2024   
+-------------------------------*/
+
 const form = document.getElementById('form');
+const emailErrorMess = "Valid email required";
 
 
 function handleSubscription(e){
@@ -6,6 +12,7 @@ function handleSubscription(e){
 
 // const formData = new FormData(e.target);
 // const data = Object.fromEntries(formData);
+
 const data = Object.fromEntries(new FormData(e.target));
 const emailInput = document.querySelector('input');
 const emailErrMess = document.querySelector('.error-email');
@@ -21,13 +28,13 @@ const userEmail = data.email.trim();
 if(userEmail === '' || userEmail === null){
 emailInput.classList.add('email-input');
 emailErrMess.style.display = 'block';
-emailErrMess.textContent = "Valid email required";
+emailErrMess.textContent = emailErrorMess;
 
 }
 
 else if (!hasValidFormat(userEmail)) {
     emailInput.classList.add('email-input');
-    emailErrMess.textContent = "Valid email required";
+    emailErrMess.textContent = emailErrorMess;
     emailErrMess.style.display = 'block'; 
  
 }
@@ -49,8 +56,10 @@ function hasValidFormat(userEmail) {
 }
 
 form.addEventListener('submit', handleSubscription);
-// dismiss subscription message
 
+
+
+// dismiss subscription message
 const dismissBtn = document.querySelector('.dismiss-btn');
 
 // function to dismiss the success message
@@ -62,21 +71,23 @@ dismissBtn.addEventListener('click', () => {
 
 
 // working with image size change
+
+const IMAGE_PATHS = {
+  mobile: './images/illustration-sign-up-mobile.svg',
+  desktop: './images/illustration-sign-up-desktop.svg',
+};
+
 function updateImageSrc() {
-const screenWidth = window.innerWidth;
-const image = document.getElementById('responsiveImage');
-    if (screenWidth <= 858) {
-      // Mobile view
-      image.src = './images/illustration-sign-up-mobile.svg';
-    } else {
-      // Desktop view
-      image.src = './images/illustration-sign-up-desktop.svg';
-    }
-  }
-  
-  // Call the function on page load
+  const image = document.getElementById('responsiveImage');
+  if (!image) return; // Exit if the element doesn't exist
+
+  const screenWidth = window.innerWidth || 1024;
+  image.src = screenWidth <= 858 ? IMAGE_PATHS.mobile : IMAGE_PATHS.desktop;
+}
+
+  // call function to match image with current screen size
   updateImageSrc();
   
-  // Update the image source dynamically on window resize
+  // dynamically resizing
   window.addEventListener('resize', updateImageSrc);
   
