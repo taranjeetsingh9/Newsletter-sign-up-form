@@ -54,9 +54,29 @@ form.addEventListener('submit', handleSubscription);
 const dismissBtn = document.querySelector('.dismiss-btn');
 
 // function to dismiss the success message
-dismissBtn.onClick = () => {
+dismissBtn.addEventListener('click', () => {
     successMess.style.display = 'none';
     messDiv.style.display = 'block';
     emailInput.value = '';
-}
- 
+} );
+
+
+// working with image size change
+function updateImageSrc() {
+const screenWidth = window.innerWidth;
+const image = document.getElementById('responsiveImage');
+    if (screenWidth <= 858) {
+      // Mobile view
+      image.src = './images/illustration-sign-up-mobile.svg';
+    } else {
+      // Desktop view
+      image.src = './images/illustration-sign-up-desktop.svg';
+    }
+  }
+  
+  // Call the function on page load
+  updateImageSrc();
+  
+  // Update the image source dynamically on window resize
+  window.addEventListener('resize', updateImageSrc);
+  
